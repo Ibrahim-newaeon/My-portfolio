@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Claude local overrides (keep team settings.json, ignore personal ones)
+.claude/settings.local.json
+.claude/.credentials.json
+
+# Logs / scratch
+*.log
+*.tmp

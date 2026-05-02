@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(start:*)",
+      "Bash(open:*)",
+      "Bash(npx serve:*)",
+      "Bash(python -m http.server:*)",
+      "PowerShell(Get-ChildItem:*)",
+      "PowerShell(Start-Process:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)",
+      "PowerShell(Remove-Item -Recurse -Force:*)"
+    ]
+  }
+}
