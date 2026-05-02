@@ -13,3 +13,9 @@ desktop.ini
 # Logs / scratch
 *.log
 *.tmp
+
+# Node / TypeScript build artifacts
+node_modules/
+prompt-generator/dist/
+prompt-generator/.env
+prompt-generator/*.tsbuildinfo
