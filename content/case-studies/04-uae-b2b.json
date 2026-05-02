@@ -1,0 +1,14 @@
+{
+  "id": "uae-b2b",
+  "order": 4,
+  "featured": false,
+  "half": true,
+  "tags": ["B2B", "LinkedIn", "UAE"],
+  "client": "UAE professional services firm",
+  "headline": "A LinkedIn-led pipeline engine that books 22 qualified meetings a month for a small partner team.",
+  "sub": "ABM list of 600 accounts, sequenced creative, and tight handoff to BD — quietly compounding for 14 months.",
+  "stats": [
+    { "k": "22 / mo", "l": "SQLs" },
+    { "k": "3.1×", "l": "Pipeline coverage" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "podcast-buy",
+  "order": 6,
+  "featured": false,
+  "half": true,
+  "tags": ["Podcast", "Media Buying", "MENA"],
+  "client": "Regional B2B SaaS",
+  "headline": "First podcast-advertising buy in MENA Arabic — brand search up 218% in eight weeks.",
+  "sub": "Hand-picked five Arabic shows, host-read scripts I wrote, and a clean attribution coupon mechanic.",
+  "stats": [
+    { "k": "+218%", "l": "Brand search" },
+    { "k": "5", "l": "Shows" }
+  ]
+}

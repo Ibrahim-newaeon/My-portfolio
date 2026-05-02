@@ -1,0 +1,59 @@
+{
+  "id": "opal-occupancy",
+  "eyebrow": "Case study · 01 of 6",
+  "h": "Lifted social-campaign conversion past the 4% benchmark while cutting media budget by 40%.",
+  "lede": "When occupancy is the only number that matters, the marketing function has to earn its line in the P&L every quarter. Three years in at Opal Hotel Amman, here's the system that made paid media a profit centre instead of a recurring cost.",
+  "meta": [
+    { "l": "Client", "v": "Opal Hotel Amman" },
+    { "l": "Role", "v": "Marketing Director · in-house" },
+    { "l": "Stack", "v": "Google Ads · Meta · GA4 · Mailchimp" },
+    { "l": "Duration", "v": "2022 → present" },
+    { "l": "Team", "v": "Me + 2 in-house, 1 freelance designer" }
+  ],
+  "stats": [
+    { "k": "4.2%", "l": "Social conv. rate" },
+    { "k": "−40%", "l": "Media budget" },
+    { "k": "+15%", "l": "YoY revenue" },
+    { "k": "0.6×", "l": "ADR-adjusted CAC" }
+  ],
+  "blocks": [
+    {
+      "id": "context",
+      "type": "prose",
+      "h": "The problem",
+      "body": "Opal had been running the standard hospitality playbook — bookable banners, OTA discounting, and a Friday-night Instagram boost. Occupancy was steady but margins were narrowing every quarter. The brief was direct: lift bookings, but not by spending more. By the third week I'd realised the bigger lever wasn't creative or audiences — it was the relationship between the booking engine, the OTAs, and the brand's own paid funnel."
+    },
+    {
+      "id": "approach",
+      "type": "list",
+      "h": "Approach",
+      "list": [
+        { "b": "Re-anchored every campaign to RevPAR.", "t": "Stopped reporting impressions and clicks; started reporting revenue per available room and incremental booking value, weekly." },
+        { "b": "Disconnected from auto-bidding briefly.", "t": "Built a manual KSA-vs-Jordan-vs-GCC segmentation so the algorithm couldn't blend high-margin direct bookings with low-margin OTA traffic." },
+        { "b": "Wrote the social creative in two languages.", "t": "Arabic-first scripts, English secondary. Same campaigns we'd been running in English alone tripled their conversion in Arabic markets." },
+        { "b": "Made the booking engine accountable.", "t": "Server-side tracking + a weekly reconciliation against the PMS. Zero discrepancy between marketing reports and the GM's revenue dashboard." }
+      ]
+    },
+    {
+      "id": "callout",
+      "type": "callout",
+      "text": "“Ibrahim is the rare marketer who'll stand in front of the GM's revenue dashboard and defend every dirham. By month four nobody questioned the marketing budget — they wanted to expand it.”",
+      "by": "General Manager, Opal Hotel Amman"
+    },
+    {
+      "id": "chart",
+      "type": "chart",
+      "h": "What happened",
+      "body": "Direct bookings grew faster than OTA bookings for the first time in the property's history. Social-campaign conversion settled above 4%, comfortably ahead of the regional hospitality benchmark of 1.6%. We negotiated a 40% reduction in paid-media spend in year two and still grew revenue 15% YoY. The team didn't shrink — instead, two people moved from reporting to events activation."
+    },
+    {
+      "id": "lessons",
+      "type": "list",
+      "h": "What I'd do differently",
+      "list": [
+        { "b": "Push for direct OTA-rate parity sooner.", "t": "We left margin on the table for two quarters because rate parity negotiations dragged. Should have made that a day-one ask." },
+        { "b": "Invest in the email list earlier.", "t": "Loyalty-list bookings have the highest margin, lowest acquisition cost, and we underbuilt that channel until late year one." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "cells": [
+    { "l": "Active campaigns", "v": 9, "d": "Across 4 GCC markets" },
+    { "l": "Monthly spend", "v": 142, "prefix": "$", "suffix": "K", "d": "Managed, reported" },
+    { "l": "Channels owned", "v": 11, "d": "Google · Meta · LinkedIn · X" },
+    { "l": "Avg reply", "v": 4, "suffix": "h", "d": "Email & WhatsApp" }
+  ]
+}

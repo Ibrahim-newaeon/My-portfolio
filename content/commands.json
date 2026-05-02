@@ -1,0 +1,17 @@
+{
+  "items": [
+    { "section": "Jump to", "icon": "§", "label": "Hero", "sub": "Top of page", "target": "#top", "shortcut": "G H" },
+    { "section": "Jump to", "icon": "§", "label": "Case studies", "sub": "Filterable grid · 6 engagements", "target": "#case-studies", "shortcut": "G C" },
+    { "section": "Jump to", "icon": "§", "label": "Opal — deep dive", "sub": "Hospitality · Amman", "target": "#deep-case", "shortcut": "G O" },
+    { "section": "Jump to", "icon": "§", "label": "Skills", "sub": "Media buying, strategy, brand", "target": "#skills", "shortcut": "G S" },
+    { "section": "Jump to", "icon": "§", "label": "About", "sub": "15 years · MENA", "target": "#about", "shortcut": "G A" },
+    { "section": "Jump to", "icon": "§", "label": "Contact", "sub": "Form + direct lines", "target": "#contact", "shortcut": "G K" },
+    { "section": "Actions", "icon": "↗", "label": "Email Ibrahim", "sub": "ibrahim@new-aeon.com", "action": "email" },
+    { "section": "Actions", "icon": "↗", "label": "Call (WhatsApp)", "sub": "+962 79 896 0079", "action": "phone" },
+    { "section": "Actions", "icon": "↗", "label": "LinkedIn", "sub": "in/ibrahimabedrabo", "action": "linkedin" },
+    { "section": "Theme", "icon": "◑", "label": "Toggle dark mode", "sub": "Light ↔ dark", "action": "theme" },
+    { "section": "Theme", "icon": "✦", "label": "Switch accent — coral", "sub": "Default", "action": "accent:coral" },
+    { "section": "Theme", "icon": "✦", "label": "Switch accent — indigo", "sub": "Cooler tone", "action": "accent:indigo" },
+    { "section": "Theme", "icon": "✦", "label": "Switch accent — forest", "sub": "Calmer tone", "action": "accent:forest" }
+  ]
+}

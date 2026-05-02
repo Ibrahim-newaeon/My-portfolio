@@ -1,0 +1,14 @@
+{
+  "id": "kuwait-ecommerce",
+  "order": 3,
+  "featured": false,
+  "half": true,
+  "tags": ["Ecommerce", "Paid Media", "Kuwait"],
+  "client": "Kuwait fashion ecommerce",
+  "headline": "Rebuilt a Shopify funnel from acquisition to retention — added $1.4M to annual top-line.",
+  "sub": "Lifecycle automation (Klaviyo), Meta+Google account restructure, and a server-side feed for catalogue ads.",
+  "stats": [
+    { "k": "+38%", "l": "ROAS" },
+    { "k": "$1.4M", "l": "New revenue" }
+  ]
+}

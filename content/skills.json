@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "h": "Media buying & paid",
+      "meta": { "l": "Google Premier Partner · Meta Lead Trainer", "r": "Daily" },
+      "pills": [
+        "Media buying", "Google Ads", "Meta Ads", "DoubleClick AdX",
+        "LinkedIn Ads", "Programmatic display", "Mobile advertising",
+        "Podcast advertising", "Campaign management", "Bid strategy",
+        "Server-side conversion tracking", "Cost management"
+      ]
+    },
+    {
+      "h": "Strategy & analytics",
+      "meta": { "l": "Director-level · in-house + agency", "r": "Weekly" },
+      "pills": [
+        "Web analytics", "Marketing analytics", "Market research",
+        "Competitive analysis", "Customer segmentation", "SEO · SEM",
+        "Marketing automation", "Brand positioning", "Campaign development",
+        "Strategic planning", "Project management"
+      ]
+    },
+    {
+      "h": "Brand, content & ecommerce",
+      "meta": { "l": "B2B + B2C · MENA", "r": "Weekly" },
+      "pills": [
+        "Ecommerce strategy", "Ecommerce management", "Content creation",
+        "Creative direction", "Branding", "B2B marketing", "B2C marketing",
+        "Email & direct mail", "Media relations", "Networking",
+        "Team training", "Workshops"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ibrahim-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ibrahim Abed Rabboh — single-page React portfolio with Decap CMS-driven content.",
+  "type": "module",
+  "scripts": {
+    "build:data": "node tools/build-data.mjs",
+    "cms": "node tools/cms.mjs"
+  },
+  "devDependencies": {
+    "decap-server": "^3.2.0"
+  }
+}

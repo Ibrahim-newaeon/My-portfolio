@@ -1,0 +1,14 @@
+{
+  "id": "jordan-tourism",
+  "order": 5,
+  "featured": false,
+  "half": true,
+  "tags": ["Hospitality", "Brand", "Jordan"],
+  "client": "Jordan inbound-tourism cluster",
+  "headline": "Co-built a campaign that brought 41% more verified arrivals from European source markets.",
+  "sub": "Programmatic display + influencer-seeded video, measured against actual border data, not GA.",
+  "stats": [
+    { "k": "+41%", "l": "Verified arrivals" },
+    { "k": "11", "l": "Source markets" }
+  ]
+}

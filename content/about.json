@@ -1,0 +1,20 @@
+{
+  "initial": "I·A",
+  "name": "Ibrahim Abed Rabboh",
+  "role": "Marketing Director · Google Premier Partner · Meta Lead Trainer",
+  "location": {
+    "City": "Amman, JO",
+    "Markets": "JO · KSA · UAE · KW",
+    "Lang": "AR · EN · FR"
+  },
+  "lede_html": "Fifteen years building marketing functions that <em>survive a CFO review</em>. Currently leading marketing at <em>Opal Hotel Amman</em>, with a long-running paid-media practice through <em>New Aeon Digital</em>.",
+  "text": "Computer Engineering by training (Jordan University of Science & Technology, 2004). Google Premier Partner in 2024. I work where the brief intersects revenue, the math has to add up, and the team needs both a strategist and someone who'll open the campaign manager themselves. Sectors I know best: hospitality, ecommerce, professional services. Markets: Jordan, KSA, Kuwait and the UAE.",
+  "timeline": [
+    { "yr": "2022–", "h": "Marketing Director", "org": "Opal Hotel Amman", "tag": "Now" },
+    { "yr": "2010–", "h": "Google Marketing Platform expert", "org": "New Aeon Digital · Amman", "tag": "Concurrent" },
+    { "yr": "2009–", "h": "Director of Online Marketing", "org": "New Aeon Digital · JO · KW · UAE · KSA", "tag": "Lead" },
+    { "yr": "2024", "h": "Meta Certified Lead Trainer", "org": "Plus full Meta Blueprint suite", "tag": "Cert" },
+    { "yr": "2024", "h": "Google Certified Premier Partner", "org": "Plus DoubleClick AdX, Mobile Ads", "tag": "Cert" },
+    { "yr": "2004", "h": "BSc, Computer Engineering", "org": "Jordan University of Science & Technology", "tag": "Edu" }
+  ]
+}

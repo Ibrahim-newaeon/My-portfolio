@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Google Premier Partner · Meta Certified Lead Trainer",
+  "title_html": "I turn marketing<br/>budgets into <em>booked</em><br/>nights, qualified<br/>leads, and <span class=\"strike\">guesswork.</span> <em>compounding revenue.</em>",
+  "sub": "Marketing Director with 15+ years across hospitality, e-commerce, and B2B services in Jordan, KSA, UAE and Kuwait. Currently leading marketing at Opal Hotel Amman — and running paid-media engagements through New Aeon Digital.",
+  "metrics": [
+    { "v": 4, "suffix": "%+", "label": "Social conversion rate" },
+    { "v": 40, "suffix": "%", "prefix": "−", "label": "Budget reduction" },
+    { "v": 15, "suffix": "%", "label": "YoY growth delivered" },
+    { "v": 15, "suffix": "+", "label": "Years in market" }
+  ]
+}

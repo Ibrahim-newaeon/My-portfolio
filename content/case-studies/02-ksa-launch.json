@@ -1,0 +1,14 @@
+{
+  "id": "ksa-launch",
+  "order": 2,
+  "featured": false,
+  "half": false,
+  "tags": ["Paid Media", "Hospitality", "KSA"],
+  "client": "Confidential KSA hospitality group",
+  "headline": "Launched a 5-property brand into the KSA market with 31% lower CPA than the regional benchmark.",
+  "sub": "Bilingual creative, server-side conversion tracking, and a SAR-aware bidding strategy.",
+  "stats": [
+    { "k": "−31%", "l": "CPA vs benchmark" },
+    { "k": "5", "l": "Properties launched" }
+  ]
+}

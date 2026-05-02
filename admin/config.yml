@@ -1,0 +1,247 @@
+# Decap CMS configuration for Ibrahim Abed Rabboh's portfolio.
+# Edits flow into content/*.json. Run `npm run build:data` (auto-run by `npm run cms`)
+# to regenerate portfolio-data.js, which the site reads at runtime.
+
+backend:
+  name: github
+  repo: Ibrahim-newaeon/My-portfolio
+  branch: main
+
+# When `decap-server` is running locally, Decap routes all writes through it
+# instead of GitHub — so you can edit without GitHub auth during development.
+local_backend: true
+
+media_folder: "screenshots"
+public_folder: "screenshots"
+
+collections:
+  # ─── Site-wide singletons ────────────────────────────────────
+  - name: "settings"
+    label: "Site settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "content/meta.json"
+        label: "Meta"
+        name: "meta"
+        fields:
+          - { label: "Name",         name: "name",         widget: "string" }
+          - { label: "Role",         name: "role",         widget: "string" }
+          - { label: "Location",     name: "location",     widget: "string" }
+          - { label: "Timezone",     name: "timezone",     widget: "string" }
+          - { label: "Email",        name: "email",        widget: "string" }
+          - { label: "Phone",        name: "phone",        widget: "string" }
+          - { label: "Availability", name: "availability", widget: "string" }
+
+      - file: "content/hero.json"
+        label: "Hero section"
+        name: "hero"
+        fields:
+          - { label: "Eyebrow",          name: "eyebrow",    widget: "string" }
+          - { label: "Title (HTML)",     name: "title_html", widget: "text", hint: "HTML allowed: <br/>, <em>, <span class=\"strike\">" }
+          - { label: "Sub-headline",     name: "sub",        widget: "text" }
+          - label: "Hero metrics"
+            name: "metrics"
+            widget: "list"
+            fields:
+              - { label: "Value",  name: "v",      widget: "number", value_type: "float" }
+              - { label: "Prefix", name: "prefix", widget: "string", required: false }
+              - { label: "Suffix", name: "suffix", widget: "string", required: false }
+              - { label: "Label",  name: "label",  widget: "string" }
+
+      - file: "content/authority.json"
+        label: "Authority strip"
+        name: "authority"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            field: { label: "Name", name: "name", widget: "string" }
+
+      - file: "content/live-strip.json"
+        label: "Live strip"
+        name: "live_strip"
+        fields:
+          - label: "Cells"
+            name: "cells"
+            widget: "list"
+            fields:
+              - { label: "Label",       name: "l",      widget: "string" }
+              - { label: "Value",       name: "v",      widget: "number", value_type: "float" }
+              - { label: "Prefix",      name: "prefix", widget: "string", required: false }
+              - { label: "Suffix",      name: "suffix", widget: "string", required: false }
+              - { label: "Description", name: "d",      widget: "string" }
+
+      - file: "content/about.json"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Initial",      name: "initial",   widget: "string" }
+          - { label: "Name",         name: "name",      widget: "string" }
+          - { label: "Role",         name: "role",      widget: "string" }
+          - label: "Location"
+            name: "location"
+            widget: "object"
+            fields:
+              - { label: "City",    name: "City",    widget: "string" }
+              - { label: "Markets", name: "Markets", widget: "string" }
+              - { label: "Lang",    name: "Lang",    widget: "string" }
+          - { label: "Lede (HTML)",  name: "lede_html", widget: "text" }
+          - { label: "Body text",    name: "text",      widget: "text" }
+          - label: "Timeline"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Year",         name: "yr",  widget: "string" }
+              - { label: "Headline",     name: "h",   widget: "string" }
+              - { label: "Organization", name: "org", widget: "string" }
+              - { label: "Tag",          name: "tag", widget: "string" }
+
+      - file: "content/contact.json"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - { label: "Pitch", name: "pitch", widget: "text" }
+          - { label: "Body",  name: "body",  widget: "text" }
+          - label: "Channels"
+            name: "list"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "l",    widget: "string" }
+              - { label: "Value", name: "v",    widget: "string" }
+              - { label: "Href",  name: "href", widget: "string" }
+
+      - file: "content/skills.json"
+        label: "Skills"
+        name: "skills"
+        fields:
+          - label: "Skill groups"
+            name: "groups"
+            widget: "list"
+            fields:
+              - { label: "Heading", name: "h", widget: "string" }
+              - label: "Meta"
+                name: "meta"
+                widget: "object"
+                fields:
+                  - { label: "Left",  name: "l", widget: "string" }
+                  - { label: "Right", name: "r", widget: "string" }
+              - label: "Pills"
+                name: "pills"
+                widget: "list"
+                field: { label: "Pill", name: "pill", widget: "string" }
+
+      - file: "content/commands.json"
+        label: "Command palette"
+        name: "commands"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Section",   name: "section",  widget: "string" }
+              - { label: "Icon",      name: "icon",     widget: "string" }
+              - { label: "Label",     name: "label",    widget: "string" }
+              - { label: "Sub",       name: "sub",      widget: "string" }
+              - { label: "Target",    name: "target",   widget: "string", required: false }
+              - { label: "Action",    name: "action",   widget: "string", required: false }
+              - { label: "Shortcut",  name: "shortcut", widget: "string", required: false }
+
+  # ─── Case studies (folder collection) ────────────────────────
+  - name: "case_studies"
+    label: "Case studies"
+    label_singular: "Case study"
+    folder: "content/case-studies"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "id"
+    summary: "{{order}} · {{client}} — {{headline}}"
+    fields:
+      - { label: "ID (slug)",   name: "id",       widget: "string", hint: "Lowercase-with-dashes; used as the case-study identifier." }
+      - { label: "Order",       name: "order",    widget: "number", value_type: "int", min: 1, hint: "Position in the grid (1 = first)." }
+      - { label: "Featured",    name: "featured", widget: "boolean", default: false, hint: "Featured cards are full-width and dark." }
+      - { label: "Half width",  name: "half",     widget: "boolean", default: false, hint: "Half-width card (span 6 of 12)." }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Client",   name: "client",   widget: "string" }
+      - { label: "Headline", name: "headline", widget: "text" }
+      - { label: "Sub",      name: "sub",      widget: "text" }
+      - label: "Stats"
+        name: "stats"
+        widget: "list"
+        fields:
+          - { label: "Value", name: "k", widget: "string" }
+          - { label: "Label", name: "l", widget: "string" }
+
+  # ─── Opal deep dive ──────────────────────────────────────────
+  - name: "deep_case"
+    label: "Opal deep case study"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "content/deep-case.json"
+        label: "Opal deep dive"
+        name: "deep_case"
+        fields:
+          - { label: "ID",        name: "id",      widget: "string" }
+          - { label: "Eyebrow",   name: "eyebrow", widget: "string" }
+          - { label: "Heading",   name: "h",       widget: "text" }
+          - { label: "Lede",      name: "lede",    widget: "text" }
+          - label: "Meta rows"
+            name: "meta"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "l", widget: "string" }
+              - { label: "Value", name: "v", widget: "string" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "k", widget: "string" }
+              - { label: "Label", name: "l", widget: "string" }
+          - label: "Blocks"
+            name: "blocks"
+            widget: "list"
+            types:
+              - label: "Prose block"
+                name: "prose"
+                widget: "object"
+                fields:
+                  - { label: "ID",      name: "id",   widget: "string" }
+                  - { label: "Type",    name: "type", widget: "hidden", default: "prose" }
+                  - { label: "Heading", name: "h",    widget: "string" }
+                  - { label: "Body",    name: "body", widget: "text" }
+              - label: "List block"
+                name: "list"
+                widget: "object"
+                fields:
+                  - { label: "ID",      name: "id",   widget: "string" }
+                  - { label: "Type",    name: "type", widget: "hidden", default: "list" }
+                  - { label: "Heading", name: "h",    widget: "string" }
+                  - label: "Items"
+                    name: "list"
+                    widget: "list"
+                    fields:
+                      - { label: "Bold lead", name: "b", widget: "string" }
+                      - { label: "Trailing",  name: "t", widget: "text" }
+              - label: "Callout"
+                name: "callout"
+                widget: "object"
+                fields:
+                  - { label: "ID",   name: "id",   widget: "string" }
+                  - { label: "Type", name: "type", widget: "hidden", default: "callout" }
+                  - { label: "Text", name: "text", widget: "text" }
+                  - { label: "By",   name: "by",   widget: "string" }
+              - label: "Chart block"
+                name: "chart"
+                widget: "object"
+                fields:
+                  - { label: "ID",      name: "id",   widget: "string" }
+                  - { label: "Type",    name: "type", widget: "hidden", default: "chart" }
+                  - { label: "Heading", name: "h",    widget: "string" }
+                  - { label: "Body",    name: "body", widget: "text" }
