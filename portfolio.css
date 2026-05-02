@@ -101,7 +101,7 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: "ss01", "cv11";
   font-size: var(--t-body);
   line-height: 1.55;
@@ -110,6 +110,7 @@ body {
   text-rendering: optimizeLegibility;
   transition: background 240ms var(--ease), color 240ms var(--ease);
 }
+.serif { font-family: "Instrument Serif", ui-serif, Georgia, serif; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
 img { display: block; max-width: 100%; }
@@ -2170,4 +2171,156 @@ img { display: block; max-width: 100%; }
   --section-pad-y: clamp(72px, 9vh, 124px);
 }
 .section + .section { border-top: 1px solid var(--line-faint); }
+
+/* ─── Utility ───────────────────────────────────────────────── */
+.italic { font-style: italic; }
+
+/* ─── Centered hero (portavia-style) ────────────────────────── */
+.hero-centered {
+  text-align: center;
+  padding-top: clamp(80px, 11vh, 152px);
+  padding-bottom: clamp(72px, 10vh, 128px);
+}
+.hero-centered .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-centered .hero-eyebrow {
+  margin: 0 auto 28px;
+}
+.hero-greet {
+  margin: 0 0 12px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  color: var(--ink-soft);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.hero-greet .serif {
+  color: var(--accent);
+  font-size: 1.18em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-right: 4px;
+}
+.hero-centered .hero-title {
+  margin: 0 auto;
+  font-size: clamp(44px, 7vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.hero-centered .hero-title em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.hero-centered .hero-tags-row {
+  margin: 28px auto 0;
+  justify-content: center;
+}
+.hero-centered .hero-sub {
+  margin: 24px auto 0;
+  text-align: center;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+.hero-centered .hero-actions {
+  margin-top: 36px;
+  justify-content: center;
+}
+.hero-centered .hero-meta {
+  margin-top: 64px;
+  width: 100%;
+  max-width: 880px;
+  justify-content: space-between;
+  text-align: left;
+  padding-top: 32px;
+  border-top: 1px solid var(--line-soft);
+}
+.hero-centered .hero-meta-item { gap: 8px; }
+.hero-centered .hero-scroll {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  margin: 64px auto 0;
+}
+
+/* ─── Big-stats block (used in About) ───────────────────────── */
+.big-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 56px 0 64px;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.big-stat {
+  padding: 40px 32px;
+  border-right: 1px solid var(--line-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.big-stat:last-child { border-right: none; }
+.big-stat-label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-mute);
+}
+.big-stat-value {
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.big-stat-value em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.7em;
+}
+.big-stat-value .unit { color: var(--accent); font-size: 0.42em; font-weight: 600; letter-spacing: 0; }
+.big-stat-sub {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  .big-stats { grid-template-columns: 1fr; }
+  .big-stat { border-right: none; border-bottom: 1px solid var(--line-soft); padding: 28px 0; }
+  .big-stat:last-child { border-bottom: none; }
+}
+
+/* ─── Refresh accents using new fonts ───────────────────────── */
+.section-title em,
+.cs-headline em,
+.cta-title em,
+.testimonial-quote em,
+.faq-q-text em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* portavia uses pill-shaped buttons; inherit but harden corners */
+.btn { font-weight: 600; }
+.btn-primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 

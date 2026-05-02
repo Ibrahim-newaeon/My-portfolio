@@ -55,44 +55,47 @@ function Hero({ heroOverride }) {
     "MENA",
   ];
   return (
-    <section id="top" className="hero">
+    <section id="top" className="hero hero-centered">
       <div className="wrap">
-        <div className="hero-grid">
-          <div>
-            <div className="hero-eyebrow">
-              <span className="hero-status-dot" />
-              <span>Available</span>
-              <span style={{ opacity: 0.5 }}>·</span>
-              <span>Amman, JO · GMT+3</span>
-            </div>
+        <div className="hero-eyebrow">
+          <span className="hero-status-dot" />
+          <span>Available</span>
+          <span style={{ opacity: 0.5 }}>·</span>
+          <span>Amman, JO · GMT+3</span>
+        </div>
 
-            <div className="hero-tags-row">
-              {tags.map((t, i) => (
-                <span key={i} className="hero-hashtag"><span aria-hidden="true">#</span>{t}</span>
-              ))}
-            </div>
+        <p className="hero-greet">
+          <span className="serif italic">Hi,</span> I'm Ibrahim Abed Rabboh.
+        </p>
 
-            <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: titleHtml }} />
-            <p className="hero-sub">{h.sub}</p>
-            <div className="hero-actions">
-              <a href="#contact" className="btn btn-primary">
-                Book a 30-min call <span className="arrow">→</span>
-              </a>
-              <a href="#deep-case" className="btn">
-                Read the Opal deep dive
-              </a>
+        <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: titleHtml }} />
+
+        <div className="hero-tags-row">
+          {tags.map((t, i) => (
+            <span key={i} className="hero-hashtag"><span aria-hidden="true">#</span>{t}</span>
+          ))}
+        </div>
+
+        <p className="hero-sub">{h.sub}</p>
+
+        <div className="hero-actions">
+          <a href="#contact" className="btn btn-primary">
+            Book a 30-min call <span className="arrow">→</span>
+          </a>
+          <a href="#deep-case" className="btn">
+            Read the Opal deep dive
+          </a>
+        </div>
+
+        <div className="hero-meta">
+          {h.metrics.map((m, i) =>
+          <div className="hero-meta-item" key={i}>
+              <div className="hero-meta-k">
+                <Counter value={m.v} prefix={m.prefix || ""} suffix={m.suffix || ""} />
+              </div>
+              <div className="hero-meta-l">{m.label}</div>
             </div>
-            <div className="hero-meta">
-              {h.metrics.map((m, i) =>
-              <div className="hero-meta-item" key={i}>
-                  <div className="hero-meta-k">
-                    <Counter value={m.v} prefix={m.prefix || ""} suffix={m.suffix || ""} />
-                  </div>
-                  <div className="hero-meta-l">{m.label}</div>
-                </div>
-              )}
-            </div>
-          </div>
+          )}
         </div>
 
         <a href="#services" className="hero-scroll" aria-label="Scroll to services">

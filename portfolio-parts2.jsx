@@ -188,14 +188,30 @@ function Skills() {
 // ─── About ─────────────────────────────────────────────────────
 function About() {
   const a = D.about;
+  const bigStats = [
+    { v: 15, suffix: "+", l: "Years", s: "Building marketing functions that survive a CFO review." },
+    { v: 4,  suffix: "",  l: "Markets", s: "Jordan, KSA, UAE and Kuwait. Arabic-first when it matters." },
+    { v: 6,  suffix: "+", l: "Engagements shown", s: "Hospitality, ecommerce, professional services, podcast." },
+  ];
   return (
     <section id="about" className="section">
       <div className="wrap">
         <div className="sec-head">
           <div className="sec-num">05 · The person</div>
           <div>
-            <h2 className="sec-title">Fifteen years across hospitality, ecommerce and B2B — same operator, same standards.</h2>
+            <h2 className="sec-title">Fifteen years across hospitality, ecommerce and B2B — <em>same operator, same standards.</em></h2>
           </div>
+        </div>
+        <div className="big-stats">
+          {bigStats.map((s, i) => (
+            <Reveal as="div" key={i} className="reveal big-stat" delay={i * 60}>
+              <div className="big-stat-label">{s.l}</div>
+              <div className="big-stat-value">
+                <Counter value={s.v} suffix={s.suffix} />
+              </div>
+              <div className="big-stat-sub">{s.s}</div>
+            </Reveal>
+          ))}
         </div>
         <div className="about-grid">
           <aside className="about-card">
