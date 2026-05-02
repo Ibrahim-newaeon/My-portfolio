@@ -3,8 +3,15 @@ const { useState, useEffect, useRef, useMemo } = React;
 
 // ─── Top bar ───────────────────────────────────────────────────
 function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 64);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <header className="topbar">
+    <header className={`topbar ${scrolled ? "is-scrolled" : ""}`}>
       <div className="topbar-inner">
         <a href="#top" className="brand-mark">
           <span className="brand-name">Ibrahim Abed Rabboh</span>
@@ -142,34 +149,38 @@ function Authority() {
 
 // ─── Case studies grid ─────────────────────────────────────────
 function CaseCard({ cs, onMouseMove }) {
-  const cls = ["cs-card"];
-  if (cs.featured) cls.push("featured");
-  if (cs.half) cls.push("cs-card-half");
+  const idSlug = String(cs.id || "").toLowerCase();
+  const primaryTag = cs.tags?.[0] || "";
   return (
-    <Reveal as="article" className={"reveal " + cls.join(" ")} onMouseMove={onMouseMove}>
-      <div className="cs-tag-row">
-        <span className="dot" />
-        {cs.tags.map((t, i) =>
-        <React.Fragment key={i}>
-            {i > 0 && <span style={{ opacity: 0.4 }}>·</span>}
-            <span>{t}</span>
-          </React.Fragment>
-        )}
-        <span style={{ marginLeft: "auto" }}>{cs.client.split(" — ")[0].slice(0, 24)}</span>
+    <Reveal as="article" className="reveal cs-card" onMouseMove={onMouseMove}>
+      <div className={`cs-thumb cs-thumb-${idSlug}`}>
+        <div className="cs-thumb-tag">{primaryTag}</div>
+        <div className="cs-thumb-art" aria-hidden="true" />
+        <div className="cs-thumb-client">{cs.client}</div>
       </div>
-      <h3 className="cs-headline">{cs.headline}</h3>
-      <p className="cs-sub">{cs.sub}</p>
-      <div className="cs-stats">
-        {cs.stats.map((s, i) =>
-        <div key={i}>
-            <div className="cs-stat-k">{s.k}</div>
-            <div className="cs-stat-l">{s.l}</div>
-          </div>
-        )}
+      <div className="cs-body">
+        <div className="cs-tag-row">
+          {cs.tags.map((t, i) =>
+            <React.Fragment key={i}>
+              {i > 0 && <span style={{ opacity: 0.4 }}>·</span>}
+              <span>{t}</span>
+            </React.Fragment>
+          )}
+        </div>
+        <h3 className="cs-headline">{cs.headline}</h3>
+        <p className="cs-sub">{cs.sub}</p>
+        <div className="cs-stats">
+          {cs.stats.map((s, i) =>
+            <div key={i}>
+              <div className="cs-stat-k">{s.k}</div>
+              <div className="cs-stat-l">{s.l}</div>
+            </div>
+          )}
+        </div>
+        <a href={cs.featured ? "#deep-case" : "#"} className="cs-link">
+          {cs.featured ? "Read the full build" : "Snapshot"} <span>→</span>
+        </a>
       </div>
-      <a href={cs.featured ? "#deep-case" : "#"} className="cs-link">
-        {cs.featured ? "Read the build" : "Snapshot"} <span>→</span>
-      </a>
     </Reveal>);
 
 }

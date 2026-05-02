@@ -2324,3 +2324,321 @@ img { display: block; max-width: 100%; }
 .btn-primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
 
+/* ─── Sticky topbar (scroll-aware) ──────────────────────────── */
+.topbar {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background 240ms var(--ease), border-color 240ms var(--ease), padding 240ms var(--ease);
+}
+.topbar .topbar-inner { transition: padding 240ms var(--ease); }
+.topbar.is-scrolled {
+  background: color-mix(in oklab, var(--paper) 78%, transparent);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom-color: var(--line-soft);
+}
+.topbar.is-scrolled .topbar-inner { padding-top: 10px; padding-bottom: 10px; }
+[data-theme="dark"] .topbar.is-scrolled {
+  background: color-mix(in oklab, var(--paper) 70%, transparent);
+}
+
+/* ensure section anchors don't hide under fixed topbar */
+.section, #top, #case-studies, #deep-case, #about, #faq, #services, #contact, #cta, #testimonial, #prompt-generator {
+  scroll-margin-top: 88px;
+}
+
+/* ─── Case study grid: uniform 3-col with gradient thumbs ───── */
+.cs-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cs-card,
+.cs-card.featured,
+.cs-card:not(.featured),
+.cs-card-half {
+  grid-column: span 1 !important;
+  min-height: 0;
+  padding: 0;
+  background: var(--paper-2);
+  border: 1px solid var(--line-faint);
+  border-radius: var(--rad-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: default;
+}
+.cs-card { transition: transform 320ms var(--ease), box-shadow 320ms var(--ease), border-color 200ms var(--ease); }
+.cs-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--line-soft);
+  box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--ink) 25%, transparent);
+}
+.cs-card::before { display: none; }
+
+.cs-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cs-thumb-tag {
+  position: absolute;
+  top: 16px; left: 16px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--paper);
+  background: rgba(0,0,0,0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  z-index: 2;
+}
+.cs-thumb-client {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+  z-index: 2;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+.cs-thumb-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.cs-thumb-art::before,
+.cs-thumb-art::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cs-card .cs-body {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.cs-card .cs-tag-row {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.cs-card .cs-headline {
+  font-size: clamp(20px, 1.5vw, 24px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.cs-card .cs-sub {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.cs-card .cs-stats {
+  margin-top: auto;
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+.cs-card .cs-stat-k {
+  font-size: clamp(22px, 1.7vw, 28px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cs-card .cs-stat-l {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+.cs-card .cs-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  transition: gap 200ms var(--ease);
+}
+.cs-card:hover .cs-link { gap: 12px; }
+
+/* ─── Per-case-study thumbnail art ──────────────────────────── */
+/* opal — warm sunrise / hospitality */
+.cs-thumb-opal-occupancy {
+  background:
+    radial-gradient(120% 80% at 18% 22%, #ffd9a4 0%, transparent 55%),
+    radial-gradient(80% 80% at 88% 86%, var(--accent-deep) 0%, transparent 60%),
+    linear-gradient(135deg, #e8a36b 0%, var(--accent) 60%, #b83c30 100%);
+}
+.cs-thumb-opal-occupancy .cs-thumb-art::before {
+  width: 220px; height: 220px;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,255,255,0.32);
+  box-shadow:
+    0 0 0 28px rgba(255,255,255,0.08),
+    inset 0 0 60px rgba(255,255,255,0.18);
+}
+.cs-thumb-opal-occupancy .cs-thumb-art::after {
+  width: 90px; height: 90px;
+  top: 24%; right: 14%;
+  background: rgba(255,255,255,0.32);
+  filter: blur(2px);
+}
+
+/* ksa — desert + minarets feel */
+.cs-thumb-ksa-launch {
+  background:
+    linear-gradient(180deg, #f4d6a4 0%, #d49562 55%, #6b3a2f 100%);
+}
+.cs-thumb-ksa-launch .cs-thumb-art {
+  background:
+    repeating-linear-gradient(115deg,
+      transparent 0 36px,
+      rgba(255,255,255,0.06) 36px 38px);
+}
+.cs-thumb-ksa-launch .cs-thumb-art::before {
+  width: 70%; height: 70%;
+  bottom: -15%; left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.18));
+  border: 0;
+}
+.cs-thumb-ksa-launch .cs-thumb-art::after {
+  width: 80px; height: 80px;
+  top: 18%; right: 18%;
+  background: radial-gradient(circle, #ffe9c5 0%, transparent 70%);
+  filter: blur(0.5px);
+}
+
+/* kuwait — fashion / magenta */
+.cs-thumb-kuwait-ecommerce {
+  background:
+    radial-gradient(circle at 80% 20%, #ff8fd6 0%, transparent 55%),
+    radial-gradient(circle at 20% 80%, #5e2178 0%, transparent 60%),
+    linear-gradient(135deg, #b54a8f 0%, #5e2178 100%);
+}
+.cs-thumb-kuwait-ecommerce .cs-thumb-art::before {
+  width: 180px; height: 180px;
+  bottom: -40px; right: -30px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cs-thumb-kuwait-ecommerce .cs-thumb-art::after {
+  width: 80px; height: 80px;
+  top: 18%; left: 22%;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+/* uae — corporate B2B / deep blue */
+.cs-thumb-uae-b2b {
+  background:
+    radial-gradient(circle at 75% 25%, #4080ff 0%, transparent 55%),
+    linear-gradient(135deg, #1f2a4a 0%, #0a1430 100%);
+}
+.cs-thumb-uae-b2b .cs-thumb-art {
+  background:
+    linear-gradient(0deg, transparent 49%, rgba(255,255,255,0.08) 49% 51%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, rgba(255,255,255,0.08) 49% 51%, transparent 51%);
+  background-size: 32px 32px;
+}
+.cs-thumb-uae-b2b .cs-thumb-art::before {
+  width: 60%; height: 60%;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(96,160,255,0.55), transparent 70%);
+  filter: blur(8px);
+  border: 0;
+  border-radius: 50%;
+}
+
+/* jordan — tourism / olive desert */
+.cs-thumb-jordan-tourism {
+  background:
+    linear-gradient(135deg, #c2a467 0%, #6b7e3a 50%, #3c4a23 100%);
+}
+.cs-thumb-jordan-tourism .cs-thumb-art {
+  background:
+    radial-gradient(120% 70% at 50% 100%, rgba(0,0,0,0.32), transparent 60%);
+}
+.cs-thumb-jordan-tourism .cs-thumb-art::before {
+  width: 0; height: 0; border-radius: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 140px solid rgba(0,0,0,0.22);
+  bottom: 0; left: 16%;
+}
+.cs-thumb-jordan-tourism .cs-thumb-art::after {
+  width: 0; height: 0; border-radius: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 110px solid rgba(0,0,0,0.32);
+  bottom: 0; right: 12%;
+}
+
+/* podcast — audio waves / midnight */
+.cs-thumb-podcast-buy {
+  background:
+    radial-gradient(circle at 50% 50%, #4a2580 0%, #150a30 90%);
+}
+.cs-thumb-podcast-buy .cs-thumb-art {
+  background:
+    repeating-linear-gradient(90deg,
+      var(--accent) 0 4px,
+      transparent 4px 18px);
+  -webkit-mask: linear-gradient(180deg, transparent 30%, black 45%, black 55%, transparent 70%);
+          mask: linear-gradient(180deg, transparent 30%, black 45%, black 55%, transparent 70%);
+  opacity: 0.85;
+}
+.cs-thumb-podcast-buy .cs-thumb-art::before {
+  width: 70%; height: 70%;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+}
+
+/* dark theme polish for the new card body */
+[data-theme="dark"] .cs-card { background: rgba(244, 239, 229, 0.04); border-color: rgba(244, 239, 229, 0.08); }
+[data-theme="dark"] .cs-card:hover { background: rgba(244, 239, 229, 0.07); border-color: rgba(244, 239, 229, 0.18); }
+
+/* Responsive collapse for the new uniform grid */
+@media (max-width: 960px) {
+  .cs-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-card, .cs-card.featured, .cs-card:not(.featured), .cs-card-half {
+    grid-column: span 1 !important;
+  }
+}
+@media (max-width: 600px) {
+  .cs-grid { grid-template-columns: 1fr; }
+}
+
