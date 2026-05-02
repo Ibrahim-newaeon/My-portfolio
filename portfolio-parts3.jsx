@@ -133,7 +133,7 @@ function Contact() {
     <section id="contact" className="section">
       <div className="wrap">
         <div className="sec-head">
-          <div className="sec-num">07 · Contact</div>
+          <div className="sec-num">08 · Contact</div>
           <div>
             <h2 className="sec-title">{c.pitch}</h2>
             <p className="sec-kicker">{c.body}</p>

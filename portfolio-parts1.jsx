@@ -16,7 +16,7 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
           <a href="#case-studies">Work</a>
           <a href="#deep-case">Opal</a>
           <a href="#about">About</a>
-          <a href="#prompt-generator">Tool</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="topbar-actions">
@@ -48,6 +48,12 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
 function Hero({ heroOverride }) {
   const h = D.hero;
   const titleHtml = heroOverride || h.title_html;
+  const tags = [
+    "Marketing Director",
+    "Google Premier Partner",
+    "Meta Lead Trainer",
+    "MENA",
+  ];
   return (
     <section id="top" className="hero">
       <div className="wrap">
@@ -55,18 +61,25 @@ function Hero({ heroOverride }) {
           <div>
             <div className="hero-eyebrow">
               <span className="hero-status-dot" />
-              <span>{h.eyebrow}</span>
+              <span>Available</span>
               <span style={{ opacity: 0.5 }}>·</span>
-              <span>2 slots · GMT+3</span>
+              <span>Amman, JO · GMT+3</span>
             </div>
-            <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: titleHtml }} style={{ fontFamily: "ui-monospace" }} />
+
+            <div className="hero-tags-row">
+              {tags.map((t, i) => (
+                <span key={i} className="hero-hashtag"><span aria-hidden="true">#</span>{t}</span>
+              ))}
+            </div>
+
+            <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: titleHtml }} />
             <p className="hero-sub">{h.sub}</p>
             <div className="hero-actions">
               <a href="#contact" className="btn btn-primary">
-                Start a conversation <span className="arrow">→</span>
+                Book a 30-min call <span className="arrow">→</span>
               </a>
               <a href="#deep-case" className="btn">
-                See a recent build
+                Read the Opal deep dive
               </a>
             </div>
             <div className="hero-meta">
@@ -81,6 +94,11 @@ function Hero({ heroOverride }) {
             </div>
           </div>
         </div>
+
+        <a href="#services" className="hero-scroll" aria-label="Scroll to services">
+          <span>Scroll</span>
+          <span className="hero-scroll-line" aria-hidden="true" />
+        </a>
       </div>
     </section>);
 

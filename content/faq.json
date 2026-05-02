@@ -1,0 +1,31 @@
+{
+  "eyebrow": "06 · Frequently asked",
+  "title": "What clients usually want to know first.",
+  "kicker": "If your question isn't here, the fastest answer is a 30-minute call.",
+  "items": [
+    {
+      "q": "What does a typical engagement look like?",
+      "a": "A 30-minute scoping call, a one-page diagnostic the next week, and an agreed scorecard before any spend moves. From there: weekly working sessions and a monthly review against the scorecard. No retainer is signed before we agree on what success looks like."
+    },
+    {
+      "q": "Do you work in-house or as an external consultant?",
+      "a": "Both, and at the moment, both at once. I lead marketing in-house at Opal Hotel Amman and run a small number of paid-media advisories through New Aeon Digital alongside it. Engagements are sized to fit; I don't take work I can't show up for properly."
+    },
+    {
+      "q": "Which markets and sectors do you work in?",
+      "a": "Mostly Jordan, KSA, the UAE and Kuwait — Arabic-first when it matters, English when it's the working language. Sectors I know best: hospitality, ecommerce, and B2B professional services. I won't take a brief in a sector I haven't operated in before."
+    },
+    {
+      "q": "How is success measured?",
+      "a": "On the same metric your CFO uses. RevPAR for hotels, ROAS and contribution margin for ecommerce, qualified pipeline and sales-cycle length for B2B. Reporting is reconciled weekly against the source-of-truth system (PMS, Shopify, CRM) — not against the ad platform's optimistic numbers."
+    },
+    {
+      "q": "Will you train my in-house team?",
+      "a": "Yes — and that's usually the goal. As a Meta Lead Trainer and Google Premier Partner, I install the operating system (naming, cadence, dashboards) and hand it off. Six-month handoff plans with measurable exit criteria are the default."
+    },
+    {
+      "q": "What's the smallest engagement you take on?",
+      "a": "A two-week paid-media diagnostic for a single account or property. No commitment beyond that. If we both want to keep going, we scope a longer engagement on real evidence rather than on a sales pitch."
+    }
+  ]
+}

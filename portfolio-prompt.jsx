@@ -72,7 +72,7 @@ function PromptGenerator() {
     <section id="prompt-generator" className="section pg-section">
       <div className="wrap">
         <div className="sec-head">
-          <div className="sec-num">06 · Prompt generator</div>
+          <div className="sec-num">07 · Prompt generator</div>
           <div>
             <h2 className="sec-title">A working tool, not a screenshot.</h2>
             <p className="sec-kicker">
