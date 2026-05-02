@@ -10,7 +10,7 @@ window.PORTFOLIO_DATA = {
     "timezone": "GMT+3",
     "email": "ibrahim@new-aeon.com",
     "phone": "+962 79 896 0079",
-    "availability": "Open to senior briefs · 2026"
+    "availability": "Available Upon Request"
   },
   "hero": {
     "eyebrow": "Google Premier Partner · Meta Certified Lead Trainer",
@@ -79,6 +79,71 @@ window.PORTFOLIO_DATA = {
       "d": "Email & WhatsApp"
     }
   ],
+  "services": {
+    "eyebrow": "01 · What I take on",
+    "title": "Three engagements I run, end to end.",
+    "kicker": "Pick a brief that moves a number. I run it from media plan to month-three reconciliation against the P&L.",
+    "items": [
+      {
+        "id": "paid-media",
+        "label": "Paid media",
+        "title": "Paid media that defends its line in the P&L.",
+        "body": "Google, Meta, LinkedIn, programmatic display, podcast — set up to report on revenue per available room, CPA against benchmark, or pipeline coverage. Not impressions.",
+        "bullets": [
+          "Server-side conversion tracking, weekly reconciliation",
+          "Bilingual creative (AR + EN) where it matters",
+          "Account restructure, bid strategy, budget defense"
+        ],
+        "cta": {
+          "label": "See a paid-media build",
+          "href": "#case-studies"
+        }
+      },
+      {
+        "id": "growth-strategy",
+        "label": "Growth strategy",
+        "title": "Strategy a CFO can read on one page.",
+        "body": "30-minute call → one-page diagnostic → a plan with measurable milestones. Built around what the GM, CRO, or founder is actually accountable for next quarter.",
+        "bullets": [
+          "ICP and channel map grounded in your actual margin data",
+          "Lifecycle, LTV, and retention work alongside acquisition",
+          "Quarterly reviews, no slide theatre"
+        ],
+        "cta": {
+          "label": "Read the Opal deep dive",
+          "href": "#deep-case"
+        }
+      },
+      {
+        "id": "team-training",
+        "label": "Team & training",
+        "title": "In-house teams that can run it without me.",
+        "body": "Meta Lead Trainer and Google Premier Partner. I install the operating system — naming conventions, weekly cadence, dashboards — and train the team to keep it running.",
+        "bullets": [
+          "Onboarding playbooks for new media buyers",
+          "Workshops in Arabic or English",
+          "Six-month handoff with measurable exit criteria"
+        ],
+        "cta": {
+          "label": "Talk to me",
+          "href": "#contact"
+        }
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Let's work together",
+    "title": "If your media plan has more red lines than you'd like — let's talk.",
+    "body": "Most engagements start with a 30-minute call and a one-page diagnostic — the kind of doc a CFO can read. From there, weeks not quarters.",
+    "primary": {
+      "label": "Book a 30-min call",
+      "href": "#contact"
+    },
+    "secondary": {
+      "label": "Email me directly",
+      "href": "mailto:ibrahim@new-aeon.com"
+    }
+  },
   "caseStudies": [
     {
       "id": "opal-occupancy",
@@ -172,16 +237,16 @@ window.PORTFOLIO_DATA = {
       ]
     },
     {
-      "id": "jordan-tourism",
+      "sub": "Programmatic display + influencer-seeded video, measured against actual border data, not GA.",
+      "client": "Jordan inbound-tourism cluster",
       "half": true,
+      "headline": "Co-built a campaign that brought 41% more verified arrivals from European source markets.",
       "tags": [
         "Hospitality",
         "Brand",
         "Jordan"
       ],
-      "client": "Jordan inbound-tourism cluster",
-      "headline": "Co-built a campaign that brought 41% more verified arrivals from European source markets.",
-      "sub": "Programmatic display + influencer-seeded video, measured against actual border data, not GA.",
+      "id": "Jordan-Tourism",
       "stats": [
         {
           "k": "+41%",

@@ -112,6 +112,55 @@ collections:
               - { label: "Value", name: "v",    widget: "string" }
               - { label: "Href",  name: "href", widget: "string" }
 
+      - file: "content/services.json"
+        label: "Services"
+        name: "services"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title",   name: "title",   widget: "string" }
+          - { label: "Kicker",  name: "kicker",  widget: "text", required: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID",    name: "id",    widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body",  name: "body",  widget: "text" }
+              - label: "Bullets"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Bullet", name: "bullet", widget: "string" }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Href",  name: "href",  widget: "string" }
+
+      - file: "content/cta.json"
+        label: "Final CTA"
+        name: "cta"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string", required: false }
+          - { label: "Title",   name: "title",   widget: "text" }
+          - { label: "Body",    name: "body",    widget: "text", required: false }
+          - label: "Primary button"
+            name: "primary"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href",  name: "href",  widget: "string" }
+          - label: "Secondary button"
+            name: "secondary"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href",  name: "href",  widget: "string" }
+
       - file: "content/skills.json"
         label: "Skills"
         name: "skills"

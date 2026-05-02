@@ -1,0 +1,43 @@
+{
+  "eyebrow": "01 · What I take on",
+  "title": "Three engagements I run, end to end.",
+  "kicker": "Pick a brief that moves a number. I run it from media plan to month-three reconciliation against the P&L.",
+  "items": [
+    {
+      "id": "paid-media",
+      "label": "Paid media",
+      "title": "Paid media that defends its line in the P&L.",
+      "body": "Google, Meta, LinkedIn, programmatic display, podcast — set up to report on revenue per available room, CPA against benchmark, or pipeline coverage. Not impressions.",
+      "bullets": [
+        "Server-side conversion tracking, weekly reconciliation",
+        "Bilingual creative (AR + EN) where it matters",
+        "Account restructure, bid strategy, budget defense"
+      ],
+      "cta": { "label": "See a paid-media build", "href": "#case-studies" }
+    },
+    {
+      "id": "growth-strategy",
+      "label": "Growth strategy",
+      "title": "Strategy a CFO can read on one page.",
+      "body": "30-minute call → one-page diagnostic → a plan with measurable milestones. Built around what the GM, CRO, or founder is actually accountable for next quarter.",
+      "bullets": [
+        "ICP and channel map grounded in your actual margin data",
+        "Lifecycle, LTV, and retention work alongside acquisition",
+        "Quarterly reviews, no slide theatre"
+      ],
+      "cta": { "label": "Read the Opal deep dive", "href": "#deep-case" }
+    },
+    {
+      "id": "team-training",
+      "label": "Team & training",
+      "title": "In-house teams that can run it without me.",
+      "body": "Meta Lead Trainer and Google Premier Partner. I install the operating system — naming conventions, weekly cadence, dashboards — and train the team to keep it running.",
+      "bullets": [
+        "Onboarding playbooks for new media buyers",
+        "Workshops in Arabic or English",
+        "Six-month handoff with measurable exit criteria"
+      ],
+      "cta": { "label": "Talk to me", "href": "#contact" }
+    }
+  ]
+}

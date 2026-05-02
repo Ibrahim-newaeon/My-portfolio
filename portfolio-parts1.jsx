@@ -12,9 +12,9 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
           <span className="brand-role">Marketing &amp; Media</span>
         </a>
         <nav className="topbar-nav">
+          <a href="#services">Services</a>
           <a href="#case-studies">Work</a>
           <a href="#deep-case">Opal</a>
-          <a href="#skills">Skills</a>
           <a href="#about">About</a>
           <a href="#prompt-generator">Tool</a>
           <a href="#contact">Contact</a>
