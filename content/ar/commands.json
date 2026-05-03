@@ -1,0 +1,17 @@
+{
+  "items": [
+    { "section": "اذهب إلى", "icon": "§", "label": "البداية", "sub": "أعلى الصفحة", "target": "#top", "shortcut": "G H" },
+    { "section": "اذهب إلى", "icon": "§", "label": "أعمال مختارة", "sub": "شبكة قابلة للتصفية · ٦ تجارب", "target": "#case-studies", "shortcut": "G C" },
+    { "section": "اذهب إلى", "icon": "§", "label": "أوبال — تحليل معمّق", "sub": "ضيافة · عمّان", "target": "#deep-case", "shortcut": "G O" },
+    { "section": "اذهب إلى", "icon": "§", "label": "المهارات", "sub": "شراء الإعلام، استراتيجية، علامة", "target": "#skills", "shortcut": "G S" },
+    { "section": "اذهب إلى", "icon": "§", "label": "عنّي", "sub": "١٥ سنة · الشرق الأوسط", "target": "#about", "shortcut": "G A" },
+    { "section": "اذهب إلى", "icon": "§", "label": "تواصل", "sub": "نموذج + خطوط مباشرة", "target": "#contact", "shortcut": "G K" },
+    { "section": "إجراءات", "icon": "↗", "label": "راسل إبراهيم", "sub": "ibrahim@new-aeon.com", "action": "email" },
+    { "section": "إجراءات", "icon": "↗", "label": "اتّصل (واتساب)", "sub": "+962 79 896 0079", "action": "phone" },
+    { "section": "إجراءات", "icon": "↗", "label": "لينكدإن", "sub": "in/ibrahimabedrabo", "action": "linkedin" },
+    { "section": "المظهر", "icon": "◑", "label": "تبديل الوضع الداكن", "sub": "فاتح ↔ داكن", "action": "theme" },
+    { "section": "المظهر", "icon": "✦", "label": "تغيير اللون — بنفسجي", "sub": "افتراضي", "action": "accent:violet" },
+    { "section": "المظهر", "icon": "✦", "label": "تغيير اللون — مرجاني", "sub": "أكثر دفئًا", "action": "accent:coral" },
+    { "section": "المظهر", "icon": "✦", "label": "تغيير اللون — أخضر غابات", "sub": "أكثر هدوءًا", "action": "accent:forest" }
+  ]
+}

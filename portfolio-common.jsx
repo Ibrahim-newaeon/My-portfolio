@@ -3,6 +3,17 @@ const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
 const D = window.PORTFOLIO_DATA;
 
+// Tiny locale switch.  Each call site writes both English and Arabic inline so
+// translations stay near the markup they belong to — no separate i18n bundle.
+//   t({ en: "Worked with", ar: "بالتعاون مع" })
+function t(strings) {
+  const isAr = (D && D.locale === "ar") ||
+               (typeof document !== "undefined" && document.documentElement.lang === "ar");
+  if (typeof strings === "string") return strings;
+  return isAr ? (strings.ar ?? strings.en ?? "") : (strings.en ?? "");
+}
+window.t = t;
+
 // ─── Animated counter ──────────────────────────────────────────
 function useCountUp(target, { duration = 1400, start = false, decimals = 0 } = {}) {
   const [v, setV] = useState(0);

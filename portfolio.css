@@ -270,6 +270,40 @@ img { display: block; max-width: 100%; }
 }
 .topbar-actions { display: flex; align-items: center; gap: 12px; }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  background: transparent;
+  transition: all 200ms var(--ease);
+}
+.lang-toggle:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+[dir="rtl"] .lang-toggle { font-size: 13px; letter-spacing: 0; }
+
+/* RTL micro-fixes — the rest of the layout uses logical properties or
+   centred flex, so very little needs flipping by hand. */
+[dir="rtl"] .topbar-nav { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .arrow,
+[dir="rtl"] .footer-mail-arrow,
+[dir="rtl"] .insight-cta span,
+[dir="rtl"] .pg-page-back .arrow,
+[dir="rtl"] .cs-link span { transform: scaleX(-1); }
+[dir="rtl"] .footer-mail:hover .footer-mail-arrow { transform: scaleX(-1) rotate(45deg); }
+[dir="rtl"] .topbar-nav a::after { transform-origin: right center; }
+
 .kbd-hint {
   display: inline-flex;
   align-items: center;

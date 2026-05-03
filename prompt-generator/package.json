@@ -1,7 +1,7 @@
 {
   "name": "prompt-generator",
-  "version": "2.0.0",
-  "description": "AI-enriched mega-prompt generator with dynamic templates and quality scoring.",
+  "version": "2.3.0",
+  "description": "Mega-prompt v2.3 generator: intent-locked templates, locale-aware defaults, deterministic 6-criterion scoring with repair loop, discriminated-union output.",
   "type": "module",
   "main": "dist/pipeline.js",
   "bin": {

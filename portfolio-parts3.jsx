@@ -167,14 +167,20 @@ function Footer() {
         <div className="footer-lead">
           <div className="footer-lead-text">
             <p className="footer-eyebrow">
-              <span className="hero-status-dot" /> Available for two clients per quarter
+              <span className="hero-status-dot" /> {t({
+                en: "Available for two clients per quarter",
+                ar: "متاح لعميلَين في الربع الواحد",
+              })}
             </p>
             <h2 className="footer-headline">
-              Build the model. <em>Then</em> name the team after it.
+              {t({
+                en: <>Build the model. <em>Then</em> name the team after it.</>,
+                ar: <>ابنِ النموذج. <em>ثمّ</em> سَمِّ الفريق على اسمه.</>,
+              })}
             </h2>
           </div>
           <a href={`mailto:${email}`} className="footer-mail">
-            <span className="footer-mail-l">Write me</span>
+            <span className="footer-mail-l">{t({ en: "Write me", ar: "راسلني" })}</span>
             <span className="footer-mail-v">{email}</span>
             <span className="footer-mail-arrow" aria-hidden="true">→</span>
           </a>
@@ -197,32 +203,32 @@ function Footer() {
 
         <div className="footer-grid">
           <div className="footer-col">
-            <h5>Sections</h5>
+            <h5>{t({ en: "Sections", ar: "الأقسام" })}</h5>
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#case-studies">Case studies</a></li>
-              <li><a href="#deep-case">Opal deep dive</a></li>
-              <li><a href="#insights">Recent writing</a></li>
-              <li><a href="#prompt-generator">Prompt generator</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#services">{t({ en: "Services", ar: "الخدمات" })}</a></li>
+              <li><a href="#case-studies">{t({ en: "Case studies", ar: "أعمال مختارة" })}</a></li>
+              <li><a href="#deep-case">{t({ en: "Opal deep dive", ar: "تحليل أوبال المعمّق" })}</a></li>
+              <li><a href="#insights">{t({ en: "Recent writing", ar: "كتابات حديثة" })}</a></li>
+              <li><a href="/prompt-generator">{t({ en: "Prompt generator", ar: "مولِّد البرومبت" })}</a></li>
+              <li><a href="#about">{t({ en: "About", ar: "عنّي" })}</a></li>
+              <li><a href="#contact">{t({ en: "Contact", ar: "تواصل" })}</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h5>Direct</h5>
+            <h5>{t({ en: "Direct", ar: "مباشرة" })}</h5>
             <ul>
               <li><a href={`mailto:${email}`}>{email}</a></li>
               <li><a href="https://www.linkedin.com/in/ibrahimabedrabo" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://www.ziconnect.com" target="_blank" rel="noopener noreferrer">ziconnect.com</a></li>
-              <li><a href="uploads/Ibrahim%20Abed%20Rabboh%20-%20CV.pdf">CV (PDF)</a></li>
+              <li><a href="uploads/Ibrahim%20Abed%20Rabboh%20-%20CV.pdf">{t({ en: "CV (PDF)", ar: "السيرة الذاتية (PDF)" })}</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h5>Status</h5>
+            <h5>{t({ en: "Status", ar: "الحالة" })}</h5>
             <ul>
-              <li><span className="availability"><span className="hero-status-dot" />Booking next quarter</span></li>
-              <li>Amman · GMT+3</li>
-              <li>MENA + GCC</li>
+              <li><span className="availability"><span className="hero-status-dot" />{t({ en: "Booking next quarter", ar: "أحجز للربع القادم" })}</span></li>
+              <li>{t({ en: "Amman · GMT+3", ar: "عمّان · GMT+3" })}</li>
+              <li>{t({ en: "MENA + GCC", ar: "الشرق الأوسط + الخليج" })}</li>
               <li className="sig">v2026.05</li>
             </ul>
           </div>

@@ -128,14 +128,16 @@ const server = createServer(async (req, res) => {
       res.writeHead(405); res.end(); return;
     }
 
-    // Pretty routes for standalone tool pages — they resolve to dedicated
-    // HTML files that mount only the requested feature.
+    // Pretty routes for standalone tool pages and locale-mirrored portfolio.
     const PRETTY = {
       "/": "Ibrahim Portfolio.html",
+      "/ar": "Ibrahim Portfolio.html",
+      "/ar/": "Ibrahim Portfolio.html",
       "/prompt-generator": "prompt-generator.html",
       "/prompt-generator/": "prompt-generator.html",
       "/prompt": "prompt-generator.html",
     };
+    const isArabic = url === "/ar" || url === "/ar/";
     let path = join(root, PRETTY[url] || (url === "/" ? "Ibrahim Portfolio.html" : url));
     const rel = relative(root, path);
     if (rel.startsWith("..")) { res.writeHead(403); res.end("forbidden"); return; }
@@ -143,7 +145,26 @@ const server = createServer(async (req, res) => {
     try { st = await stat(path); } catch { res.writeHead(404); res.end("not found"); return; }
     if (st.isDirectory()) path = join(path, "index.html");
     const ext = "." + path.split(".").pop().toLowerCase();
-    const body = await readFile(path);
+    let body = await readFile(path);
+
+    // For /ar (and /ar/) we serve the same portfolio HTML but rewrite the
+    // <html> tag for RTL+Arabic and swap the data-script src so the page
+    // reads from the Arabic content tree.  No file duplication.
+    if (isArabic && ext === ".html") {
+      body = Buffer.from(
+        body.toString("utf8")
+          .replace(
+            /<html lang="en"([^>]*)>/,
+            '<html lang="ar" dir="rtl"$1>'
+          )
+          .replace(
+            /<script src="portfolio-data\.js"><\/script>/,
+            '<script src="portfolio-data-ar.js"></script>'
+          ),
+        "utf8"
+      );
+    }
+
     // No bundler / no fingerprinted filenames in this project, so anything
     // that can change between deploys (HTML, CSS, JSX, JS, JSON, YAML) must
     // not be browser-cached — otherwise edits stay invisible until the cache

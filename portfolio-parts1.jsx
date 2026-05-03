@@ -19,15 +19,21 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
           <span className="brand-role">Marketing &amp; Media</span>
         </a>
         <nav className="topbar-nav">
-          <a href="#services">Services</a>
-          <a href="#case-studies">Work</a>
-          <a href="#deep-case">Opal</a>
-          <a href="#insights">Writing</a>
-          <a href="/prompt-generator" className="topbar-nav-feature">Prompt generator</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#services">{t({ en: "Services", ar: "الخدمات" })}</a>
+          <a href="#case-studies">{t({ en: "Work", ar: "أعمال" })}</a>
+          <a href="#deep-case">{t({ en: "Opal", ar: "أوبال" })}</a>
+          <a href="#insights">{t({ en: "Writing", ar: "كتابات" })}</a>
+          <a href="/prompt-generator" className="topbar-nav-feature">{t({ en: "Prompt generator", ar: "مولِّد البرومبت" })}</a>
+          <a href="#about">{t({ en: "About", ar: "عنّي" })}</a>
+          <a href="#contact">{t({ en: "Contact", ar: "تواصل" })}</a>
         </nav>
         <div className="topbar-actions">
+          <a
+            className="lang-toggle"
+            href={typeof document !== "undefined" && document.documentElement.lang === "ar" ? "/" : "/ar"}
+            aria-label="Toggle language">
+            {typeof document !== "undefined" && document.documentElement.lang === "ar" ? "EN" : "ع"}
+          </a>
           {showCmdHint &&
           <button className="kbd-hint" onClick={onOpenCmd} aria-label="Open command palette">
               <span>Search</span>
@@ -56,31 +62,30 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
 function Hero({ heroOverride }) {
   const h = D.hero;
   const titleHtml = heroOverride || h.title_html;
-  const tags = [
-    "Marketing Director",
-    "Google Premier Partner",
-    "Meta Lead Trainer",
-    "MENA",
-  ];
+  const tags = t({
+    en: ["Marketing Director", "Google Premier Partner", "Meta Lead Trainer", "MENA"],
+    ar: ["مدير تسويق", "شريك جوجل المتميّز", "مدرّب ميتا المعتمد", "الشرق الأوسط"],
+  });
   return (
     <section id="top" className="hero hero-centered">
       <div className="wrap">
         <div className="hero-eyebrow">
           <span className="hero-status-dot" />
-          <span>Available</span>
+          <span>{t({ en: "Available", ar: "متاح" })}</span>
           <span style={{ opacity: 0.5 }}>·</span>
-          <span>Amman, JO · GMT+3</span>
+          <span>{t({ en: "Amman, JO · GMT+3", ar: "عمّان، الأردن · GMT+3" })}</span>
         </div>
 
         <p className="hero-greet">
-          <span className="serif italic">Hi,</span> I'm Ibrahim Abed Rabboh.
+          <span className="serif italic">{t({ en: "Hi,", ar: "مرحبًا،" })}</span>{" "}
+          {t({ en: "I'm Ibrahim Abed Rabboh.", ar: "أنا إبراهيم عبد ربه." })}
         </p>
 
         <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: titleHtml }} />
 
         <div className="hero-tags-row">
-          {tags.map((t, i) => (
-            <span key={i} className="hero-hashtag"><span aria-hidden="true">#</span>{t}</span>
+          {tags.map((tag, i) => (
+            <span key={i} className="hero-hashtag"><span aria-hidden="true">#</span>{tag}</span>
           ))}
         </div>
 
@@ -88,10 +93,10 @@ function Hero({ heroOverride }) {
 
         <div className="hero-actions">
           <a href="#contact" className="btn btn-primary">
-            Book a 30-min call <span className="arrow">→</span>
+            {t({ en: "Book a 30-min call", ar: "احجز مكالمة ٣٠ دقيقة" })} <span className="arrow">→</span>
           </a>
           <a href="#deep-case" className="btn">
-            Read the Opal deep dive
+            {t({ en: "Read the Opal deep dive", ar: "اقرأ تحليل أوبال المعمّق" })}
           </a>
         </div>
 
@@ -106,8 +111,8 @@ function Hero({ heroOverride }) {
           )}
         </div>
 
-        <a href="#services" className="hero-scroll" aria-label="Scroll to services">
-          <span>Scroll</span>
+        <a href="#services" className="hero-scroll" aria-label={t({ en: "Scroll to services", ar: "انتقل إلى الخدمات" })}>
+          <span>{t({ en: "Scroll", ar: "اسحب" })}</span>
           <span className="hero-scroll-line" aria-hidden="true" />
         </a>
       </div>
@@ -122,7 +127,7 @@ function Authority() {
     <div className="wrap">
       <div className="authority-strip">
         <div className="authority-label">
-          <span>Worked with</span>
+          <span>{t({ en: "Worked with", ar: "بالتعاون مع" })}</span>
         </div>
         <div className="authority-marquee">
           <div className="authority-track">
@@ -179,7 +184,9 @@ function CaseCard({ cs, onMouseMove }) {
           )}
         </div>
         <a href={cs.featured ? "#deep-case" : "#"} className="cs-link">
-          {cs.featured ? "Read the full build" : "Snapshot"} <span>→</span>
+          {cs.featured
+            ? t({ en: "Read the full build", ar: "اقرأ التحليل الكامل" })
+            : t({ en: "Snapshot", ar: "لمحة سريعة" })} <span>→</span>
         </a>
       </div>
     </Reveal>);
@@ -206,21 +213,27 @@ function CaseStudies() {
     <section id="case-studies" className="section">
       <div className="wrap">
         <div className="sec-head">
-          <div className="sec-num">02 · Selected work</div>
+          <div className="sec-num">{t({ en: "02 · Selected work", ar: "٠٢ · أعمال مختارة" })}</div>
           <div>
-            <h2 className="sec-title">Six engagements where the marketing budget had to defend itself in front of a CFO.</h2>
-            <p className="sec-kicker">A representative slice across hospitality, ecommerce and B2B. NDAs cover several more. Filter by what you care about.</p>
+            <h2 className="sec-title">{t({
+              en: "Six engagements where the marketing budget had to defend itself in front of a CFO.",
+              ar: "ست تجارب اضطرّت فيها ميزانية التسويق للدفاع عن نفسها أمام المدير المالي.",
+            })}</h2>
+            <p className="sec-kicker">{t({
+              en: "A representative slice across hospitality, ecommerce and B2B. NDAs cover several more. Filter by what you care about.",
+              ar: "شريحة تمثيلية عبر الضيافة والتجارة الإلكترونية و B2B. اتفاقيات السرّية تغطّي تعاقدات أخرى. صَفِّ بما يهمّك.",
+            })}</p>
           </div>
         </div>
 
         <div className="cs-filters">
-          <span className="cs-filters-label">Filter</span>
+          <span className="cs-filters-label">{t({ en: "Filter", ar: "تصفية" })}</span>
           <button
             className="chip"
             aria-pressed={filter === "all"}
             onClick={() => setFilter("all")}>
-            
-            All <span className="count">{all.length}</span>
+
+            {t({ en: "All", ar: "الكل" })} <span className="count">{all.length}</span>
           </button>
           {allTags.map(([t, n]) =>
           <button
