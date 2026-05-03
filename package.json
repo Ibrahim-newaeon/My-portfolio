@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build:data": "node tools/build-data.mjs",
-    "cms": "node tools/cms.mjs"
+    "cms": "node tools/cms.mjs",
+    "start": "node tools/serve.mjs"
   },
   "devDependencies": {
     "decap-server": "^3.2.0"
