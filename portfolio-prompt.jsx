@@ -75,16 +75,26 @@ function PromptGenerator() {
     <section id="prompt-generator" className="section pg-section">
       <div className="wrap">
         <div className="sec-head">
-          <div className="sec-num">07 · Prompt generator</div>
+          <div className="sec-num">07 · Live demo</div>
           <div>
             <h2 className="sec-title">A working tool, not a screenshot.</h2>
             <p className="sec-kicker">
-              Type a raw task. The backend enriches it (Claude Haiku 4.5 when keyed,
-              deterministic heuristics otherwise), assembles a structured mega-prompt,
-              and scores the output across five quality criteria.
+              Type a raw task. The backend (Claude Haiku 4.5) enriches it, assembles a
+              structured mega-prompt, and scores the output across five quality criteria.
+              Calls the same Node API serving this page.
             </p>
           </div>
         </div>
+
+        <div className="pg-stage">
+          <div className="pg-stage-bar">
+            <span className="pg-stage-pulse" aria-hidden="true" />
+            <span className="pg-stage-label">Live</span>
+            <span className="pg-stage-sep" aria-hidden="true">·</span>
+            <code className="pg-stage-route">POST {endpoint}</code>
+            <span className="pg-stage-spacer" />
+            <span className="pg-stage-meta">Claude Haiku 4.5 · Node 20 · same origin</span>
+          </div>
 
         <div className="pg-card">
           <div className="pg-input-wrap">
@@ -208,6 +218,7 @@ function PromptGenerator() {
               }
             </div>
           }
+        </div>
         </div>
       </div>
     </section>

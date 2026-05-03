@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Recent writing",
+  "title": "Notes from the field.",
+  "kicker": "Short pieces on operating model, attribution, and where reporting actually breaks. Three or four a year — only when there's something a CFO would actually use.",
+  "items": [
+    {
+      "id": "ras-vs-roas",
+      "tag": "Attribution",
+      "date": "2026-04-12",
+      "readMinutes": 6,
+      "title": "RAS, not ROAS — stop reporting the platform's number.",
+      "excerpt": "Meta and Google count revenue against the wrong denominator. Here's the substitute I run weekly with three of my retainers, and why the gap to the CFO's report shrunk from 38% to under 4% in two quarters.",
+      "url": "#"
+    },
+    {
+      "id": "two-week-diagnostic",
+      "tag": "Operating model",
+      "date": "2026-03-02",
+      "readMinutes": 4,
+      "title": "The two-week diagnostic: what to demand before any retainer.",
+      "excerpt": "Every account I've inherited was overspending on something it couldn't defend. A short list of the tests I run in week one, the questions I ask before I accept the brief, and the one chart I refuse to ship without.",
+      "url": "#"
+    },
+    {
+      "id": "arabic-creative-stack",
+      "tag": "MENA",
+      "date": "2026-01-22",
+      "readMinutes": 7,
+      "title": "An Arabic-first creative stack that doesn't read as translated.",
+      "excerpt": "Most regional accounts I audit are running hand-rendered Arabic on top of English-led concepts. That choice quietly halves their CTR. The fix is structural, not stylistic — and the operating model behind it took two years to get right.",
+      "url": "#"
+    }
+  ]
+}

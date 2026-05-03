@@ -22,8 +22,9 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
           <a href="#services">Services</a>
           <a href="#case-studies">Work</a>
           <a href="#deep-case">Opal</a>
+          <a href="#insights">Writing</a>
+          <a href="#prompt-generator">Live demo</a>
           <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="topbar-actions">

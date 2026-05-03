@@ -39,7 +39,7 @@ function stripFalse(obj) {
 }
 
 async function build() {
-  const [meta, hero, authority, liveStrip, services, cta, faq, testimonial, deepCase, skills, about, contact, commands, caseStudies] =
+  const [meta, hero, authority, liveStrip, services, cta, faq, testimonial, deepCase, skills, about, contact, commands, insights, caseStudies] =
     await Promise.all([
       readJson(join(contentDir, "meta.json")),
       readJson(join(contentDir, "hero.json")),
@@ -54,6 +54,7 @@ async function build() {
       readJson(join(contentDir, "about.json")),
       readJson(join(contentDir, "contact.json")),
       readJson(join(contentDir, "commands.json")),
+      readJson(join(contentDir, "insights.json")),
       loadCaseStudies(),
     ]);
 
@@ -72,6 +73,7 @@ async function build() {
     about,
     contact,
     commands: commands.items,
+    insights,
   };
 
   const banner =

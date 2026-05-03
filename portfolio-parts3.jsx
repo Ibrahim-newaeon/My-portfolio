@@ -160,44 +160,77 @@ function Contact() {
 
 // ─── Footer ────────────────────────────────────────────────────
 function Footer() {
+  const email = D.meta?.email || "ibrahim@new-aeon.com";
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <h2>Build the model. <em>Then</em> name the team after it.</h2>
-            <p>Independent practice based in Amman. Available for two clients per quarter — the work is better that way.</p>
+        <div className="footer-lead">
+          <div className="footer-lead-text">
+            <p className="footer-eyebrow">
+              <span className="hero-status-dot" /> Available for two clients per quarter
+            </p>
+            <h2 className="footer-headline">
+              Build the model. <em>Then</em> name the team after it.
+            </h2>
           </div>
+          <a href={`mailto:${email}`} className="footer-mail">
+            <span className="footer-mail-l">Write me</span>
+            <span className="footer-mail-v">{email}</span>
+            <span className="footer-mail-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div className="footer-social" aria-label="Profiles and links">
+          <a className="footer-icon" href="https://www.linkedin.com/in/ibrahimabedrabo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zM7.5 8h4.36v1.91h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.27c0-1.5-.03-3.43-2.09-3.43-2.09 0-2.41 1.63-2.41 3.32V22H7.5V8z" /></svg>
+          </a>
+          <a className="footer-icon" href={`mailto:${email}`} aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 7 9-7" /></svg>
+          </a>
+          <a className="footer-icon" href="https://www.ziconnect.com" aria-label="Personal site" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+          </a>
+          <a className="footer-icon" href="https://github.com/Ibrahim-newaeon/My-portfolio" aria-label="Source on GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a11 11 0 0 1 5.76 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.12 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.35.78 1.05.78 2.12v3.14c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z" /></svg>
+          </a>
+        </div>
+
+        <div className="footer-grid">
           <div className="footer-col">
-            <h5>Pages</h5>
+            <h5>Sections</h5>
             <ul>
+              <li><a href="#services">Services</a></li>
               <li><a href="#case-studies">Case studies</a></li>
-              <li><a href="#deep-case">Deep dive</a></li>
-              <li><a href="#skills">Skills</a></li>
+              <li><a href="#deep-case">Opal deep dive</a></li>
+              <li><a href="#insights">Recent writing</a></li>
+              <li><a href="#prompt-generator">Prompt generator</a></li>
               <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
           <div className="footer-col">
             <h5>Direct</h5>
             <ul>
-              <li><a href="mailto:ibrahim@new-aeon.com">Email</a></li>
-              <li><a href="https://www.linkedin.com/in/ibrahimabedrabo">LinkedIn</a></li>
-              <li><a href="https://www.ziconnect.com">ziconnect.com</a></li>
-              <li><a href="#">CV (PDF)</a></li>
+              <li><a href={`mailto:${email}`}>{email}</a></li>
+              <li><a href="https://www.linkedin.com/in/ibrahimabedrabo" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.ziconnect.com" target="_blank" rel="noopener noreferrer">ziconnect.com</a></li>
+              <li><a href="uploads/Ibrahim%20Abed%20Rabboh%20-%20CV.pdf">CV (PDF)</a></li>
             </ul>
           </div>
           <div className="footer-col">
             <h5>Status</h5>
             <ul>
-              <li><span className="availability"><span className="hero-status-dot" />Booking Q3 · 2026</span></li>
+              <li><span className="availability"><span className="hero-status-dot" />Booking next quarter</span></li>
               <li>Amman · GMT+3</li>
-              <li className="sig">v2026.05 · last edit 2 days ago</li>
+              <li>MENA + GCC</li>
+              <li className="sig">v2026.05</li>
             </ul>
           </div>
         </div>
+
         <div className="footer-bot">
           <span>© 2026 Ibrahim Abed Rabboh · All rights reserved</span>
-          <span className="sig">⌘K to navigate · Amman · MENA + GCC</span>
+          <span className="sig">⌘K to navigate</span>
         </div>
       </div>
     </footer>
