@@ -1,24 +1,24 @@
 /* Ibrahim Abed Rabboh — Portfolio
-   Editorial light system, lifted from the deck's vocabulary.
-   Coral accent · Inter Tight · paper/ink · disciplined type scale.
+   Inky-violet on chalk paper · Cairo body · Instrument Serif italic accent.
+   Designed for agency-peer audience: distinctive palette, calm rhythm.
 */
 
 :root {
-  /* Light palette (default) — same DNA as deck */
-  --ink:        #1A1814;
-  --ink-soft:   #514a3f;
-  --ink-mute:   #8a8275;
-  --paper:      #F7F3EC;
-  --paper-2:    #EFE9DD;
-  --paper-3:    #E6DFCE;
-  --line-soft:  rgba(26, 24, 20, 0.12);
-  --line-faint: rgba(26, 24, 20, 0.06);
-  --accent:     #E85D4F;
-  --accent-soft:#FBE0DA;
-  --accent-deep:#B83C30;
-  --gold:       #D4A24C;
-  --gold-soft:  #F1E2BE;
-  --ok:         #4F7A52;
+  /* Light palette (default) — chalk + ink + inky violet */
+  --ink:        #0E0B1F;
+  --ink-soft:   #3F375C;
+  --ink-mute:   #786E92;
+  --paper:      #F2EFE6;
+  --paper-2:    #E9E4D6;
+  --paper-3:    #DDD6C2;
+  --line-soft:  rgba(14, 11, 31, 0.14);
+  --line-faint: rgba(14, 11, 31, 0.06);
+  --accent:     #2B1B5C;
+  --accent-soft:#DDD6F0;
+  --accent-deep:#1A0F3B;
+  --gold:       #B89248;
+  --gold-soft:  #ECDFB8;
+  --ok:         #3D6B4A;
 
   /* Type scale (web — much smaller than deck's 1920px scale) */
   --t-display: clamp(64px, 9vw, 144px);
@@ -54,41 +54,28 @@
   --card-pad: 22px;
 }
 
-/* Dark theme */
+/* Dark theme — ink-on-violet inversion */
 [data-theme="dark"] {
-  --ink:        #F4EFE5;
-  --ink-soft:   #C7BFB0;
-  --ink-mute:   #7d7666;
-  --paper:      #14120F;
-  --paper-2:    #1C1A16;
-  --paper-3:    #25221C;
-  --line-soft:  rgba(244, 239, 229, 0.10);
-  --line-faint: rgba(244, 239, 229, 0.05);
-  --accent-soft:rgba(232, 93, 79, 0.16);
-  --gold-soft:  rgba(212, 162, 76, 0.18);
+  --ink:        #EDEAFA;
+  --ink-soft:   #B4ABD4;
+  --ink-mute:   #7C72A0;
+  --paper:      #0E0B1F;
+  --paper-2:    #16122B;
+  --paper-3:    #1F1A38;
+  --line-soft:  rgba(237, 234, 250, 0.10);
+  --line-faint: rgba(237, 234, 250, 0.05);
+  --accent:     #8A78E5;
+  --accent-soft:rgba(138, 120, 229, 0.18);
+  --accent-deep:#B0A2F0;
+  --gold-soft:  rgba(184, 146, 72, 0.18);
 }
 
-/* Accent variants */
-[data-accent="indigo"] {
-  --accent:      #2E3A8C;
-  --accent-soft: #DDE0F2;
-  --accent-deep: #1B2566;
-}
-[data-accent="indigo"][data-theme="dark"] {
-  --accent:      #6A7BD8;
-  --accent-soft: rgba(106, 123, 216, 0.16);
-  --accent-deep: #8FA0EE;
-}
-[data-accent="forest"] {
-  --accent:      #2F6B4A;
-  --accent-soft: #DCE8DF;
-  --accent-deep: #1F4A33;
-}
-[data-accent="forest"][data-theme="dark"] {
-  --accent:      #5BA67E;
-  --accent-soft: rgba(91, 166, 126, 0.16);
-  --accent-deep: #7BC79C;
-}
+/* Accent variants — kept for the in-page tweak panel */
+[data-accent="violet"] { /* default — same as :root */ }
+[data-accent="coral"] { --accent: #E85D4F; --accent-soft: #FBE0DA; --accent-deep: #B83C30; }
+[data-accent="coral"][data-theme="dark"] { --accent-soft: rgba(232, 93, 79, 0.16); }
+[data-accent="forest"] { --accent: #2F6B4A; --accent-soft: #DCE8DF; --accent-deep: #1F4A33; }
+[data-accent="forest"][data-theme="dark"] { --accent: #5BA67E; --accent-soft: rgba(91, 166, 126, 0.16); --accent-deep: #7BC79C; }
 [data-accent="ink"] {
   --accent:      var(--ink);
   --accent-soft: var(--paper-2);
@@ -101,8 +88,7 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Plus Jakarta Sans", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family: "Cairo", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
   font-size: var(--t-body);
   line-height: 1.55;
   letter-spacing: -0.005em;
@@ -110,7 +96,20 @@ body {
   text-rendering: optimizeLegibility;
   transition: background 240ms var(--ease), color 240ms var(--ease);
 }
+[lang="ar"] body, [dir="rtl"] body {
+  /* Cairo carries Arabic glyphs natively — same family, slightly looser leading
+     reads better in Arabic. */
+  line-height: 1.7;
+  letter-spacing: 0;
+}
 .serif { font-family: "Instrument Serif", ui-serif, Georgia, serif; }
+[lang="ar"] .serif, [dir="rtl"] .serif {
+  /* Instrument Serif has no Arabic glyphs — fall back to Cairo italic for the
+     accent words so RTL pages don't render in Times-style system serif. */
+  font-family: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
 img { display: block; max-width: 100%; }
