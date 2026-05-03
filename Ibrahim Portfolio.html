@@ -4641,7 +4641,9 @@ function App() {
 <script type="text/babel" src="portfolio-prompt.jsx" data-presets="react" data-filename="portfolio-prompt.jsx"></script>
 
 <script type="text/babel" data-presets="react" data-filename="inline-5">
-const { useState, useEffect, useCallback } = React;
+// useState/useEffect/useCallback are already destructured into the global
+// scope by portfolio-common.jsx; redeclaring them here triggers
+// "Identifier already declared" once Babel concatenates scripts.
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "theme": "dark",

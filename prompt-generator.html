@@ -85,7 +85,8 @@
 <script type="text/babel" src="portfolio-prompt.jsx" data-presets="react"></script>
 
 <script type="text/babel" data-presets="react">
-const { useEffect } = React;
+// useEffect is already in scope from portfolio-common.jsx — redeclaring
+// here throws "Identifier already declared" under @babel/standalone.
 
 function PromptGeneratorPage() {
   // Apply theme/density tokens to <html> the same way the portfolio does.
