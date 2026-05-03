@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="coral" data-density="comfortable">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Prompt Generator — Ibrahim Abed Rabboh</title>
+<meta name="description" content="A working tool: type a raw task and a structured Claude-grade mega-prompt comes back, scored across five quality criteria." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portfolio.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="portfolio-data.js"></script>
+
+<style>
+  /* Page-specific tweaks: a tighter top header, no scroll cue, no marketing chrome. */
+  body { background: var(--paper); }
+  .pg-page { min-height: 100vh; display: flex; flex-direction: column; }
+  .pg-page-bar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in oklab, var(--paper) 92%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-faint);
+  }
+  .pg-page-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px clamp(16px, 4vw, 32px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .pg-page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 160ms var(--ease);
+  }
+  .pg-page-back:hover { color: var(--ink); }
+  .pg-page-back .arrow { transition: transform 200ms var(--ease); }
+  .pg-page-back:hover .arrow { transform: translateX(-3px); }
+  .pg-page-brand {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-mute);
+  }
+  .pg-page-brand strong { color: var(--accent); font-weight: 700; }
+  .pg-page main {
+    flex: 1;
+    padding-top: clamp(40px, 6vh, 80px);
+    padding-bottom: clamp(48px, 8vh, 120px);
+  }
+  .pg-page .pg-section { padding: 0; }
+  .pg-page .wrap { max-width: 1100px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+  .pg-page-foot {
+    border-top: 1px solid var(--line-faint);
+    padding: 24px clamp(16px, 4vw, 32px);
+    color: var(--ink-mute);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .pg-page-foot a { color: var(--ink-soft); }
+  .pg-page-foot a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<div id="app" class="pg-page"></div>
+
+<script type="text/babel" src="portfolio-common.jsx" data-presets="react"></script>
+<script type="text/babel" src="portfolio-prompt.jsx" data-presets="react"></script>
+
+<script type="text/babel" data-presets="react">
+const { useEffect } = React;
+
+function PromptGeneratorPage() {
+  // Apply theme/density tokens to <html> the same way the portfolio does.
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.theme = "dark";
+    root.dataset.accent = "coral";
+    root.dataset.density = "comfortable";
+  }, []);
+
+  return (
+    <>
+      <header className="pg-page-bar">
+        <div className="pg-page-bar-inner">
+          <a href="/" className="pg-page-back">
+            <span className="arrow" aria-hidden="true">←</span>
+            <span>Back to portfolio</span>
+          </a>
+          <div className="pg-page-brand">
+            <strong>Ibrahim Abed Rabboh</strong> · Prompt Generator
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <PromptGenerator />
+      </main>
+
+      <footer className="pg-page-foot">
+        <span>Claude Haiku 4.5 · Node 20 · same-origin <code>/api/generate</code></span>
+        <span>
+          <a href="/">Portfolio</a> &nbsp;·&nbsp; <a href="mailto:ibrahim@new-aeon.com">Email</a>
+        </span>
+      </footer>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("app")).render(<PromptGeneratorPage />);
+</script>
+</body>
+</html>

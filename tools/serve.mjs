@@ -128,7 +128,15 @@ const server = createServer(async (req, res) => {
       res.writeHead(405); res.end(); return;
     }
 
-    let path = join(root, url === "/" ? "Ibrahim Portfolio.html" : url);
+    // Pretty routes for standalone tool pages — they resolve to dedicated
+    // HTML files that mount only the requested feature.
+    const PRETTY = {
+      "/": "Ibrahim Portfolio.html",
+      "/prompt-generator": "prompt-generator.html",
+      "/prompt-generator/": "prompt-generator.html",
+      "/prompt": "prompt-generator.html",
+    };
+    let path = join(root, PRETTY[url] || (url === "/" ? "Ibrahim Portfolio.html" : url));
     const rel = relative(root, path);
     if (rel.startsWith("..")) { res.writeHead(403); res.end("forbidden"); return; }
     let st;

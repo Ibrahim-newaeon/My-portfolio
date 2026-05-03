@@ -23,7 +23,7 @@ function TopBar({ onOpenCmd, theme, setTheme, showCmdHint }) {
           <a href="#case-studies">Work</a>
           <a href="#deep-case">Opal</a>
           <a href="#insights">Writing</a>
-          <a href="#prompt-generator">Live demo</a>
+          <a href="/prompt-generator" className="topbar-nav-feature">Prompt generator</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
