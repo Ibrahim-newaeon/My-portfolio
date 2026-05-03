@@ -4655,6 +4655,24 @@ function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [cmdOpen, setCmdOpen] = useState(false);
 
+  // Deep-link scroll: the browser's native hash-scroll fires before React
+  // mounts, and most section ids only exist after render — so we re-scroll
+  // to window.location.hash once on mount.
+  useEffect(() => {
+    if (!window.location.hash) return;
+    const target = window.location.hash;
+    const tryScroll = () => {
+      const el = document.querySelector(target);
+      if (el) {
+        el.scrollIntoView({ behavior: "auto", block: "start" });
+        return true;
+      }
+      return false;
+    };
+    // Two passes: now + after the next paint, in case Reveal/IO delays it.
+    if (!tryScroll()) requestAnimationFrame(() => requestAnimationFrame(tryScroll));
+  }, []);
+
   // Apply theme/accent/density to <html>
   useEffect(() => {
     const root = document.documentElement;
