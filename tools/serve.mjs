@@ -136,10 +136,16 @@ const server = createServer(async (req, res) => {
     if (st.isDirectory()) path = join(path, "index.html");
     const ext = "." + path.split(".").pop().toLowerCase();
     const body = await readFile(path);
-    const isHtml = ext === ".html";
+    // No bundler / no fingerprinted filenames in this project, so anything
+    // that can change between deploys (HTML, CSS, JSX, JS, JSON, YAML) must
+    // not be browser-cached — otherwise edits stay invisible until the cache
+    // window expires.  Long-cache only true static media.
+    const longCache = new Set([".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico",
+                               ".webp", ".pdf", ".woff", ".woff2", ".ttf", ".pptx"]);
+    const cache = longCache.has(ext) ? "public, max-age=86400" : "no-store";
     res.writeHead(200, {
       "content-type": MIME[ext] || "application/octet-stream",
-      "cache-control": isHtml ? "no-store" : "public, max-age=3600",
+      "cache-control": cache,
     });
     res.end(body);
   } catch (err) {
