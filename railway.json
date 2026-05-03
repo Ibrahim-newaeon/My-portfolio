@@ -2,7 +2,7 @@
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "npm run build:data"
+    "buildCommand": "npm ci --prefix prompt-generator && npm run build --prefix prompt-generator && npm run build:data"
   },
   "deploy": {
     "startCommand": "npm start",

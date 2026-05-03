@@ -1,7 +1,10 @@
 /* global React, Reveal */
 // Prompt Generator — landing-page UI that hits the prompt-generator backend.
 
-const DEFAULT_ENDPOINT = "http://localhost:3030/api/generate";
+// Default to same-origin /api/generate so the deployed site can call its own
+// backend.  Override via the in-UI Endpoint setting for local dev (e.g.
+// http://localhost:3030/api/generate when running prompt-generator/ standalone).
+const DEFAULT_ENDPOINT = "/api/generate";
 const ENDPOINT_KEY = "pg_endpoint";
 
 function PromptGenerator() {
@@ -142,8 +145,8 @@ function PromptGenerator() {
                 spellCheck={false}
               />
               <p className="pg-hint">
-                Run <code>npm run serve</code> inside <code>prompt-generator/</code> to start a local backend on
-                port 3030. Set <code>ANTHROPIC_API_KEY</code> in <code>.env</code> for AI-powered enrichment.
+                Default <code>/api/generate</code> hits this same site. For local dev, run <code>npm run serve</code> inside
+                <code> prompt-generator/</code> and point this at <code>http://localhost:3030/api/generate</code>.
               </p>
             </div>
           }
