@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-theme="light" data-accent="violet" data-density="comfortable"><head>
+<!DOCTYPE html><html lang="en" data-theme="dark" data-accent="blue" data-density="comfortable"><head>
 
 
 
@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="portfolio.css?v=7">
 
@@ -4646,8 +4646,8 @@ function App() {
 // "Identifier already declared" once Babel concatenates scripts.
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "light",
-  "accent": "violet",
+  "theme": "dark",
+  "accent": "blue",
   "density": "comfortable",
   "showCmdHint": true,
   "heroOverride": ""
@@ -4732,23 +4732,16 @@ function App() {
       />
 
       <main>
-        {/* Act 1 — The Pitch */}
         <Hero heroOverride={t.heroOverride} />
         <Authority />
-
-        {/* Act 2 — The Proof */}
-        <DeepCase />
-        <CaseStudies />
-        <Testimonial />
-
-        {/* Act 3 — The Method */}
         <Services />
+        <CaseStudies />
+        <DeepCase />
+        <Testimonial />
         <Skills />
-
-        {/* Act 4 — The Mind */}
-        <Insights />
         <About />
         <FAQ />
+        <Insights />
         <FinalCTA />
         <Contact />
       </main>
